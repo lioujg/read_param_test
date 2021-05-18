@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include <string>
+#include "std_msgs/String.h"
 
 int main(int argc, char **argv){
     ros::init(argc, argv, "show_param");
@@ -9,5 +10,5 @@ int main(int argc, char **argv){
     nh.getParam("noise", noise);
     nh.getParam("string_var", string_var);
     ROS_INFO("noise parameter is................... %f\n", noise);
-    std::cout << "string is..................." << string_var << std::endl;
+    ROS_INFO_STREAM("string parameter is................... " << string_var);
 };
